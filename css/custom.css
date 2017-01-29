@@ -69,6 +69,10 @@
     background-color: #252625;
     color: #555855;
     margin-top: 100px;
+/*
+    position:absolute;
+    bottom:0;
+*/
 }
 .widget-title{
         font-weight: normal;
