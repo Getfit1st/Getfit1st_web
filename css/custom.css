@@ -70,3 +70,50 @@
     color: #555855;
     margin-top: 100px;
 }
+.widget-title{
+        font-weight: normal;
+    background: #312f2f;
+    border-bottom: 0;
+    font-size: 15px;
+    color: white;
+}
+.widget-title span{
+   padding: 10px;
+
+}
+.widget{
+
+    padding: 10px 60px 0px 60px;
+}
+.widget-text{
+        margin-top: 17px;
+    color: white;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 24px;
+}
+.social-media{
+    padding: 10px 60px 0px 60px;
+}
+.social-media-content{
+
+    background-color: #30a8ad;
+    padding: 10px 10px 10px 10px;
+    color: white;
+}
+.social-media-content  i{
+    background: #1a1c19;
+    border: 1px solid black;
+    border-radius: 20px;
+    height: 23px;
+    width: 25px;
+    padding: 3px 0px 0px 5px;
+}
+.social-icon{
+    background: white;
+    border: 1px solid white;
+    border-radius: 20px;
+    height: 23px;
+    width: 25px;
+    padding: 3px 0px 0px 7px;
+}
