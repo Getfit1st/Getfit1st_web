@@ -124,5 +124,6 @@
 
 .main-content{
         min-height: 400px;
-    position: relative;s
+    position: relative;
+    background: url(../images/maincontent.jpg) repeat;
 }
