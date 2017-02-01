@@ -6,26 +6,47 @@
       <meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
       <link href = "css/bootstrap.min.css" rel = "stylesheet">
       <link href = "css/custom.css" rel = "stylesheet">
+
+       <link href = "css/bootstrap-datetimepicker.min.css" rel = "stylesheet">
        <link href = "css/font-awesome.min.css" rel = "stylesheet">
 
 
-      <script src = "https://code.jquery.com/jquery.js"></script>
-      <script src = "js/bootstrap.min.js"></script>
+
+
+
+
 
    </head>
-    <script>
-    $(document).ready(function(){
 
-        // control boostrao drop down hover instead of click
-        $('.dropdown').hover(function(){
-          $(this).find('.dropdown-menu').first().stop(true, true).delay(250).slideDown();
-        }, function() {
-          $(this).find('.dropdown-menu').first().stop(true, true).delay(100).slideUp()
-        });
-    });
-    </script>
+
     <style>
+        .registration{
 
+            margin: 0 auto;
+            max-width: 400px;
+            padding: 10px 40px;
+            background: #009edf;
+            color: #FFF;
+            text-shadow: none;
+            -webkit-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.31);
+            -moz-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.31);
+            box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.31);
+            margin-top: 30px;
+        }
+        span.input-group-addon i {
+            color: #009edf;
+            font-size: 17px;
+        }
+        .form-vertical .row{
+            margin-bottom: 20px;
+        }
+        .radio-inline{
+            padding-left: 50px;
+        }
+        .bootstrap-datetimepicker-widget.dropdown-menu {
+            {
+                   color: black;
+            }
     </style>
    <body>
 
@@ -87,12 +108,12 @@
                <div class="row ">
                    <div class="col-md-6 col-lg-6">
                         <div class = "navbar-header">
-                            <a class = "" href = "#"><img src="images/logo.png"></img></a>
+                            <a class = "" href = "home.html"><img src="images/logo.png"></img></a>
                        </div>
                    </div>
                <div class="col-md-6 col-lg-6">
                    <ul class = "nav navbar-nav">
-                     <li class = "active"><a href = "#">HOME</a></li>
+                     <li class = "active"><a href = "home.html">HOME</a></li>
                      <li class="dropdown">
                          <a href = "#" class = "dropdown-toggle" data-toggle = "dropdown">PAGES
                              <b class = "caret"></b>
@@ -121,8 +142,83 @@
             <!--   main content elements        -->
 
        <div class="main-content">
+            <div class="registration container">
 
-       </div>
+				<h5>Registration heading text comes here..</h5>
+					<form class="form-vertical" method="post" action="#">
+
+						<div class="row">
+							<label for="name" class="col-md-12 col-lg-12 control-label">Your Name</label>
+							<div class="col-md-12 col-lg-12">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+									<input type="text" class="form-control" name="name" id="name"  placeholder="Enter your Name"/>
+								</div>
+							</div>
+						</div>
+
+						<div class="row">
+							<label for="email" class="col-md-12 col-lg-12  control-label">Your Email</label>
+							<div class="col-md-12 col-lg-12">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
+									<input type="text" class="form-control" name="email" id="email"  placeholder="Enter your Email"/>
+								</div>
+							</div>
+						</div>
+
+						<div class="row">
+							<label for="username" class="col-md-12 col-lg-12  control-label">Date Of Birth</label>
+							<div class="col-md-12 col-lg-12">
+								<div class="input-group date" data-provide="datepicker">
+									<span class="input-group-addon"><i class="fa fa-calendar" aria-hidden="true"></i></span>
+									<input type="text" class="form-control" name="dob" id="dob"  placeholder=""/>
+                                    <div class="input-group-addon">
+                                        <span class="glyphicon glyphicon-th"></span>
+                                    </div>
+								</div>
+							</div>
+						</div>
+                        <div class="row">
+							<label for="username" class="col-md-12 col-lg-12  control-label">Gender</label>
+							<div class="col-md-12 col-lg-12">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+									<label class="radio-inline"><input type="radio" name="optradio">Male</label>
+                                    <label class="radio-inline"><input type="radio" name="optradio">Female</label>
+								</div>
+							</div>
+						</div>
+
+						<div class="row">
+							<label for="password" class="col-md-12 col-lg-12  control-label">Password</label>
+							<div class="col-md-12 col-lg-12">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+									<input type="password" class="form-control" name="password" id="password"  placeholder="Enter your Password"/>
+								</div>
+							</div>
+						</div>
+
+						<div class="row">
+							<label for="confirm" class="col-md-12 col-lg-12  control-label">Confirm Password</label>
+							<div class="col-md-12 col-lg-12">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+									<input type="password" class="form-control" name="confirm" id="confirm"  placeholder="Confirm your Password"/>
+								</div>
+							</div>
+						</div>
+                        <div class="row">
+                            <div class="col-md-12 col-lg-12 ">
+                                <a href="#" target="_blank" type="button" id="button" class="btn btn-primary btn-lg btn-block login-button">Register</a>
+                            </div>
+                        </div>
+
+					</form>
+				</div>
+			</div>
+
 
 
          <!--    main content ends   -->
@@ -172,5 +268,28 @@
        </footer>
            <!--   Footer ends    -->
 
-   </body>
+    <script src = "js/jquery-3.1.1.min.js"></script>
+    <script src = "js/bootstrap.min.js"></script>
+    <script src = "js/moment.js"></script>
+    <script src = "js/bootstrap-datetimepicker.min.js"></script>
+
+    <script type="text/javascript">
+    $(document).ready(function(){
+
+        // control boostrao drop down hover instead of click
+        $('.dropdown').hover(function(){
+          $(this).find('.dropdown-menu').first().stop(true, true).delay(250).slideDown();
+        }, function() {
+          $(this).find('.dropdown-menu').first().stop(true, true).delay(100).slideUp()
+        });
+
+        $('.date').datetimepicker({
+        format:'DD-MM-YYYY',
+
+          });
+    });
+    </script>
+ </body>
+
+
 </html>

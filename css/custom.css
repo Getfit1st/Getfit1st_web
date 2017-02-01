@@ -121,3 +121,8 @@
     width: 25px;
     padding: 3px 0px 0px 7px;
 }
+
+.main-content{
+        min-height: 400px;
+    position: relative;s
+}
