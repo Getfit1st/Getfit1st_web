@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html>
+
+   <head>
+      <title>Getfit1st</title>
+      <meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
+      <link href = "css/bootstrap.min.css" rel = "stylesheet">
+      <link href = "css/custom.css" rel = "stylesheet">
+
+       <link href = "css/bootstrap-datetimepicker.min.css" rel = "stylesheet">
+       <link href = "css/font-awesome.min.css" rel = "stylesheet">
+
+       <style>
+           ol{
+               list-style: none;
+           }
+           .registration-breadcrumb-table{
+               width:100%;
+               background-color: #ffffff;
+               border-collapse: collapse;
+               border-spacing: 0;
+           }
+           .registration-process-breadcrumb.registration-process-breadcrumb-border {
+                border: 1px solid #bdc0c4;
+           }
+           .registration-process-breadcrumb {
+                list-style: none;
+                padding-left: 0;
+                white-space: nowrap;
+                height: 46px;
+                width: 100%;
+                padding-right: 45px;
+                display: table;
+            }
+           .registration-process-breadcrumb > li {
+                display: table-cell;
+                position: relative;
+            }
+           .registration-process-breadcrumb > li:first-child > a {
+                padding-left: 15px;
+            }
+           .registration-process-breadcrumb > li > a, .registration-process-breadcrumb > li > a:visited, .registration-process-breadcrumb > li > a:hover {
+                color: #343d47;
+                text-decoration: none;
+            }
+           .registration-process-breadcrumb > li > a {
+                display: block;
+                padding: 14px 15px 12px 38px;
+                transition: all 1s;
+                text-align: center;
+            }
+           .registration-process-breadcrumb > li:after {
+                display: block;
+                height: 32px;
+                width: 32px;
+                position: absolute;
+                top: 6px;
+                right: -18px;
+                border-top: 1px solid #bdc0c4;
+                border-right: 1px solid #bdc0c4;
+                background-color: transparent;
+                content: ' ';
+                -moz-transform: rotate(45deg);
+                -ms-transform: rotate(45deg);
+                -webkit-transform: rotate(45deg);
+                transform: rotate(45deg);
+            }
+           .registration-process-breadcrumb > li:last-child::after {
+                width: 0;
+                height: 0;
+            }
+           .registration-process-breadcrumb > li.disabled > a, .registration-process-breadcrumb > li.disabled > a:visited, .registration-process-breadcrumb > li.disabled > a:hover {
+                color: #b3bcc7;
+                border-bottom-color: transparent;
+                cursor: default;
+            }
+           .registration-process-breadcrumb > li.active > a:before, .registration-process-breadcrumb > li.active > a:hover:before {
+                position: absolute;
+                bottom: 0;
+                left: 3px;
+                right: -3px;
+                top: auto;
+                height: 3px;
+                background-color: #278efc;
+                display: inline-block;
+                content: ' ';
+                transform: skewX(-45deg);
+            }
+       </style>
+   </head>
+   <body>
+
+       <div class="container-fluid">
+           <header >
+           <!-- top bar elements          -->
+           <div class="topbar">
+            <div class = "row mainRow" >
+                <div class="col-md-9 col-lg-9">
+                    <p>Any Questions? Call Us: <span>1-223-355-2214</span></p>
+                </div>
+                <div class="col-md-3 col-lg-3">
+                    <li class="dropdown loginDropDown">
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>Login / Register</b> <span class="caret"></span></a>
+
+                        <ul id="login-dp" class="dropdown-menu">
+                            <li>
+                                 <div class="row">
+                                        <div class="col-md-12">
+                                             <form class="form" role="form" method="post" action="login" accept-charset="UTF-8" id="login-nav">
+                                                    <div class="form-group">
+                                                         <label class="sr-only" for="exampleInputEmail2">Email address</label>
+                                                         <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Email address" required>
+                                                    </div>
+                                                    <div class="form-group">
+                                                         <label class="sr-only" for="exampleInputPassword2">Password</label>
+                                                         <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password" required>
+                                                         <div class="help-block text-right"><a href="">Forget the password ?</a></div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                         <button type="submit" class="btn btn-primary btn-block">Sign in</button>
+                                                    </div>
+                                                    <div class="checkbox">
+                                                         <label>
+                                                         <input type="checkbox"> keep me logged-in
+                                                         </label>
+                                                    </div>
+                                             </form>
+                                        </div>
+                                        <div class="bottom text-center">
+                                            New here ? <a href="#"><b>Join Us</b></a>
+                                        </div>
+                                 </div>
+                            </li>
+                        </ul>
+
+                    </li>
+
+<!--               <li class = "active"><a href = "#"><span class="glyphicon glyphicon-user"></span>Register</a></li>-->
+
+                </div>
+           </div>
+         </div>
+           <!--  top bar end         -->
+           <!--    nav bar elements       -->
+
+           <nav class = "navbar navbar-default" role = "navigation">
+            <div class="row">
+                <div class="col-md-4 col-lg-4">
+                    <div class = "navbar-header">
+                        <button type = "button" class = "navbar-toggle"
+                             data-toggle = "collapse" data-target = "#example-navbar-collapse">
+                             <span class = "sr-only">Toggle navigation</span>
+                             <span class = "icon-bar"></span>
+                             <span class = "icon-bar"></span>
+                             <span class = "icon-bar"></span>
+                          </button>
+                            <a class = "" href = "home.html"><img src="images/logo.png"></img></a>
+                    </div>
+                   </div>
+
+               <div class="col-md-8 col-lg-8">
+                   <div class = "collapse navbar-collapse" id = "example-navbar-collapse">
+                   <ul class = "nav navbar-nav">
+                     <li class = "active"><a href = "home.html">HOME</a></li>
+                     <li class="dropdown">
+                         <a href = "#" class = "dropdown-toggle" data-toggle = "dropdown">PAGES
+                             <b class = "caret"></b>
+                         </a>
+                         <ul class = "dropdown-menu">
+                           <li><a href = "#">Home Variation</a></li>
+                           <li><a href = "#">About</a></li>
+                           <li><a href = "#">Our Classes</a></li>
+                           <li><a href = "#">FAQ</a></li>
+                           <li><a href = "#">Q&A</a></li>
+                           <li><a href = "#">Contact</a></li>
+                        </ul>
+                      </li>
+                       <li ><a href = "#">SCHEDULE</a></li>
+                       <li ><a href = "#">TRAINERS</a></li>
+                       <li ><a href = "#">BLOG</a></li>
+                       <li ><a href = "#">SHOP</a></li>
+                       <li ><a href = "#">FEATURES</a></li>
+                  </ul>
+                </div>
+                </div>
+               </div>
+            </nav>
+           </header>
+
+           <!--    nav bar end      -->
+            <!--   main content elements        -->
+
+       <div class="main-content container-fluid">
+           <div class="container">
+               <div class="process-breadcrumb">
+
+                   <ol class="registration-process-breadcrumb registration-process-breadcrumb-border row">
+                        <li class="active col-lg-*" data-state="current">
+                           <a>Profile Questions</a>
+                        </li>
+                        <li class="disabled col-lg-*" data-state="future">
+                            <a>Personal Details</a>
+                        </li>
+                        <li class="disabled col-lg-*" data-state="future">
+                            <a>Life Style</a>
+                        </li>
+                        <li class="disabled col-lg-*" data-state="future">
+                            <a>Health History</a>
+                        </li>
+                        <li class="disabled col-lg-*" data-state="future">
+                            <a>Goals</a>
+                        </li>
+                        <li class="disabled col-lg-*" data-state="future">
+                            <a>Nutrition Log</a>
+                        </li>
+                        <li class="disabled col-lg-*" data-state="future">
+                            <a>Prevous Exercise History</a>
+                        </li>
+                        <li class="disabled col-lg-*" data-state="future">
+                            <a>Why What Questions</a>
+                        </li>
+                    </ol>
+                </div>
+               <div class="registration-form">
+                   <form>
+<!--                       profile questions-->
+                       <div class="reg_profile_questions" style="display:none;">
+                           <div class="form-group">
+                                <label for="usr_first_name">First Name </label>
+                               <input type="text" class="form-control" id="usr_first_name">
+                           </div>
+                           <div class="form-group">
+                                <label for="usr_last_name">Last Name </label>
+                               <input type="text" class="form-control" id="usr_last_name">
+                           </div>
+                           <div class="form-group">
+                                <label for="usr_dob">Date of birth </label>
+                               <input type="text" class="form-control" id="usr_dob">
+                           </div>
+                           <fieldset class="form-group">
+                                <legend>Gender</legend>
+                                <div class="form-check">
+                                  <label class="form-check-label">
+                                    <input type="radio" class="form-check-input" name="usr_gender" id="usr_gender_male" value="male" checked>
+                                    Male
+                                  </label>
+                                </div>
+                                <div class="form-check">
+                                <label class="form-check-label">
+                                    <input type="radio" class="form-check-input" name="usr_gender" id="usr_gender_female" value="female">
+                                    Female
+                                  </label>
+                                </div>
+                           </fieldset>
+                           <div class="form-group">
+                            <label for="usr_email">Email address </label>
+                            <input type="email" class="form-control" id="usr_email" aria-describedby="emailHelp" placeholder="Enter email">
+                            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                          </div>
+                           <div class="form-group">
+                              <label for="usr-mobile" class="col-2 col-form-label">Mobile </label>
+                                <input class="form-control" type="tel" id="usr_mobile">
+                            </div>
+
+                       </div>
+<!--      Personal details                 -->
+                       <div class="reg_personal_details" style="display:none;">
+                           <div class="form-group">
+                                <label for="usr_height">Height in CM </label>
+                               <input type="text" class="form-control" id="usr_height">
+                           </div>
+                           <div class="form-group">
+                                <label for="usr_weight">Weight in kG </label>
+                               <input type="text" class="form-control" id="usr_weight">
+                           </div>
+                           <div class="form-group">
+                                <label for="usr_dob">Your BRM </label>
+                               <input type="text" class="form-control" id="usr_dob" aria-describedby="brm_help" readonly>
+                               <small id="brm_help" class="form-text text-muted">BRM will be calculated automatically based on Height, Weight, Age.</small>
+                           </div>
+                           <div class="form-group">
+                              <label for="usr_occupation">Occupation</label>
+                              <select id="usr_occupation" class="form-control">
+                                <option value="">Select</option>
+                                <option value="student">Student</option>
+                                <option value="it">IT</option>
+                              </select>
+                            </div>
+                       </div>
+
+<!--            life style           -->
+                       <div class="reg_life_style" style="display:none;">
+                           <fieldset class="form-group">
+                                <legend>Smoke</legend>
+                                <div class="form-check">
+                                  <label class="form-check-label">
+                                    <input type="radio" class="form-check-input" name="usr_smoke" id="usr_smoke_yes" value="yes">
+                                    Yes
+                                  </label>
+                                </div>
+                                <div class="form-check">
+                                <label class="form-check-label">
+                                    <input type="radio" class="form-check-input" name="usr_smoke" aria-describedby="usr_smoke_no_points_help" id="usr_smoke_no" value="no" checked>
+                                    No
+                                  </label>
+                                    <small id="usr_smoke_no_points_help" class="form-text text-muted">No smoke means 10 points</small>
+                                </div>
+                               <label for="usr_smoke_per_day">How many per day ? </label>
+                               <input type="text" class="form-control" id="usr_smoke_per_day">
+                           </fieldset>
+
+                           <fieldset class="form-group">
+                                <legend>Alocohol</legend>
+                                <div class="form-check">
+                                  <label class="form-check-label">
+                                    <input type="radio" class="form-check-input" name="usr_alcohol" id="usr_alcohol_yes" value="yes">
+                                    Yes
+                                  </label>
+                                </div>
+                                <div class="form-check">
+                                <label class="form-check-label">
+                                    <input type="radio" class="form-check-input" name="usr_alcohol" aria-describedby="usr_alcohol_no_points_help" id="usr_alcohol_no" value="no" checked>
+                                    No
+                                  </label>
+                                    <small id="usr_alcohol_no_points_help" class="form-text text-muted">No Alcohol means 10 points</small>
+                                </div>
+                               <label for="usr_alcohol_per_week">How many per week ? </label>
+                               <input type="text" class="form-control" id="usr_alcohol_per_week">
+                           </fieldset>
+
+                           <div class="form-group">
+                              <label for="usr_kind_of_job">Kind of job</label>
+                              <select id="usr_kind_of_job" class="form-control">
+                                <option value="">Select</option>
+                                <option value="no_job">No Job</option>
+                                <option value="office_work">Office Work</option>
+                                <option value="standng_light_work">Standing - light work</option>
+                                  <option value="standing_averag_work">Standing - average work</option>
+                                  <option value="standing_heavy_work">Standing - heavy work</option>
+                              </select>
+
+                               <label for="usr_work_days_per_week">How many days per week ? </label>
+                               <input type="text" class="form-control" id="usr_work_days_per_week">
+
+                               <label for="usr_work_hours_per_day">How many hours per day ? </label>
+                               <input type="text" class="form-control" id="usr_work_hours_per_day">
+                            </div>
+
+                           <div class="form-group">
+                              <label for="usr_free_time_work">In my free time I'M</label>
+                              <select id="usr_free_time_work" class="form-control" aria-describedby="usr_free_time_work_points_help">
+                                <option value="">Select</option>
+                                <option value="not_ver_active">Not very active</option>
+                                <option value="quite_active">Quite active</option>
+                                <option value="very_active">Very active ( excluding sports activities )</option>
+                              </select>
+                               <small id="usr_free_time_work_points_help" class="form-text text-muted">Very active means 10 points</small>
+                           </div>
+
+                           <div class="form-group">
+                              <label for="usr_water">Water</label>
+                              <select id="usr_water" class="form-control" aria-describedby="usr_water_points_help">
+                                <option value="">Select</option>
+                                <option value="500">500 ml</option>
+                                <option value="1">1 liter</option>
+                                <option value="1.5">1.5 liter</option>
+                                  <option value="1">2 liter</option>
+                                <option value="2+">2+ liter</option>
+                              </select>
+                               <small id="usr_water_points_help" class="form-text text-muted">2 liters+ is 10 points</small>
+                           </div>
+
+                           <div class="form-group">
+                              <label for="usr_sleep">Sleep</label>
+                              <select id="usr_sleep" class="form-control" aria-describedby="usr_sleep_points_help">
+                                <option value="">Select</option>
+                                <option value="less_than_5"><5 hours</option>
+                                <option value="6">6 hours</option>
+                                <option value="more_than_6">>6 hours</option>
+                              </select>
+                               <small id="usr_sleep_points_help" class="form-text text-muted">6+ hours is 10 points</small>
+                           </div>
+
+                           <fieldset class="form-group">
+                                <legend>Fast food</legend>
+                                <div class="form-check">
+                                  <label class="form-check-label">
+                                    <input type="radio" class="form-check-input" name="usr_fast_food" id="usr_fast_food_yes" value="yes">
+                                    Yes
+                                  </label>
+                                </div>
+                                <div class="form-check">
+                                <label class="form-check-label">
+                                    <input type="radio" class="form-check-input" name="usr_fast_food" aria-describedby="usr_fast_food_no_points_help" id="usr_fast_food_no" value="no" checked>
+                                    No
+                                  </label>
+                                    <small id="usr_fast_food_no_points_help" class="form-text text-muted">No Fastfood is 5 points</small>
+                                </div>
+                               <label for="usr_fast_food_per_week">How many times per week ? </label>
+                               <input type="text" class="form-control" id="usr_fast_food_per_week">
+                           </fieldset>
+
+                       </div>
+
+                       <!--      healt history                -->
+                       <div class="reg_health_history" style="display:none;">
+                           <fieldset class="form-group">
+                                <legend>Medication</legend>
+                                <div class="form-check">
+                                  <label class="form-check-label">
+                                    <input type="radio" class="form-check-input" name="usr_medication" id="usr_medication_yes" value="yes">
+                                    Yes
+                                  </label>
+                                </div>
+                                <div class="form-check">
+                                <label class="form-check-label">
+                                    <input type="radio" class="form-check-input" name="usr_medication"  id="usr_medication_no" value="no" checked>
+                                    No
+                                  </label>
+                                </div>
+
+                           </fieldset>
+
+                           <fieldset class="form-group">
+                                <legend>Health Issues</legend>
+                                <div class="form-check">
+                                  <label class="form-check-label">
+                                    <input type="radio" class="form-check-input" name="usr_health_issues" id="usr_health_issues_yes" value="yes">
+                                    Yes
+                                  </label>
+                                </div>
+                                <div class="form-check">
+                                <label class="form-check-label">
+                                    <input type="radio" class="form-check-input" name="usr_health_issues"  aria-describedby="usr_health_issues_no_points_help" id="usr_health_issues_no" value="no" checked>
+                                    No
+                                  </label>
+                                    <small id="usr_health_issues_no_points_help" class="form-text text-muted">No health issues is 10 points</small>
+                                </div>
+
+                               <label for="usr_health_issues_are">Health Issues are </label>
+                              <select id="usr_health_issues_are" class="form-control">
+                                <option value="">Select</option>
+                                <option value="heart">heart</option>
+                                <option value="lungs">lungs</option>
+                                <option value="kideny">>kidney</option>
+                              </select>
+
+                           </fieldset>
+
+                           <fieldset class="form-group">
+                                <legend>Injury History</legend>
+                                <div class="form-check">
+                                  <label class="form-check-label">
+                                    <input type="radio" class="form-check-input" name="usr_injury_history" id="usr_injury_history_yes" value="yes">
+                                    Yes
+                                  </label>
+                                </div>
+                                <div class="form-check">
+                                <label class="form-check-label">
+                                    <input type="radio" class="form-check-input" name="usr_injury_history"  id="usr_injury_history_no" value="no" checked aria-describedby="usr_injury_history_no_points_help">
+                                    No
+                                  </label>
+                                    <small id="usr_injury_history_no_points_help" class="form-text text-muted">No Injury history is 10 points</small>
+                                </div>
+
+                           </fieldset>
+
+                           <fieldset class="form-group">
+                                <legend>Family Health issues History</legend>
+                                <div class="form-check">
+                                  <label class="form-check-label">
+                                    <input type="radio" class="form-check-input" name="usr_family_health_issues_history" id="usr_family_health_issues_yes" value="yes">
+                                    Yes
+                                  </label>
+                                </div>
+                                <div class="form-check">
+                                <label class="form-check-label">
+                                    <input type="radio" class="form-check-input" name="usr_family_health_issues"  id="usr_family_health_issues_no" value="no" checked aria-describedby="usr_family_health_issues_no_points_help">
+                                    No
+                                  </label>
+                                    <small id="usr_family_health_issues_no_points_help" class="form-text text-muted">No Family health issues history is 5 points</small>
+                                </div>
+                               <label for="usr_family_health_issues_are">Family Health issues are </label>
+                              <select id="usr_family_health_issues_are" class="form-control">
+                                <option value="">Select</option>
+                                <option value="heart">heart</option>
+                                <option value="lungs">lungs</option>
+                                <option value="kideny">>kidney</option>
+                              </select>
+                           </fieldset>
+
+                       </div>
+
+
+                       <!--      Goals                 -->
+                       <div class="reg_personal_details" style="display:none;">
+
+                           <div class="form-group">
+                              <label for="usr_occupation">Goal</label>
+                              <select id="usr_occupation" class="form-control">
+                                <option value="">Select</option>
+                                <option value="weight_loss">Weight loss</option>
+                                <option value="weight_gain">Weight gain</option>
+                                  <option value="body_toning">Body toning</option>
+                                <option value="body_building">Body building</option>
+                                  <option value="strngth_training">Strngth traning</option>
+                                <option value="endurance_training">Endurance training</option>
+                                  <option value="others">Others</option>
+
+                              </select>
+                               <label for="usr_weight_gain">Weight want to gain </label>
+                               <input type="text" class="form-control" id="usr_weight_gain">
+
+                               <label for="usr_weight_loss">Weidht want to loss </label>
+                               <input type="text" class="form-control" id="usr_weight_loss">
+                            </div>
+
+                           <div class="form-group">
+                                <label for="usr_goal_date">Date you want to reach the goal </label>
+                               <input type="text" class="form-control" id="usr_goal_date">
+                           </div>
+                           <div class="form-group">
+                                <label for="usr_goal_duration">Goal Duration </label>
+                               <input type="text" class="form-control" id="usr_goal_duration" readonly>
+                           </div>
+
+                           <div class="form-group">
+                            <label for="user_model_picture">Do you have any one picture whom you want to look like please upload thatpicture?</label>
+                            <input type="file" class="form-control-file" id="user_model_picture" aria-describedby="user_model_picture_help">
+                            <small id="user_model_picture_help" class="form-text text-muted">you can search in google for picture by famous athletes, fitness people, celebrities, actors, models ect.That gives clear view of your goals..</small>
+                          </div>
+
+
+                       </div>
+
+                       <!--      Nutrition log                 -->
+                       <div class="reg_personal_details" style="display:none;">
+
+
+
+
+                       </div>
+
+                       <!--      Previous exercise history                 -->
+                       <div class="reg_exerice_history" style="">
+
+                           <fieldset class="form-group">
+                                <legend>Have you had a trainer before</legend>
+                                <div class="form-check">
+                                  <label class="form-check-label">
+                                    <input type="radio" class="form-check-input" name="usr_had_trainer_before" id="usr_had_trainer_before_yes" value="yes">
+                                    Yes
+                                  </label>
+                                </div>
+                                <div class="form-check">
+                                <label class="form-check-label">
+                                    <input type="radio" class="form-check-input" name="usr_had_trainer_before"  id="usr_had_trainer_before_no" value="no" checked>
+                                    No
+                                  </label>
+                                </div>
+
+                           </fieldset>
+
+                           <fieldset class="form-group">
+                                <legend>Exercise knowledge</legend>
+                                <div class="form-check">
+                                  <label class="form-check-label">
+                                    <input type="radio" class="form-check-input" name="usr_exercise_knowledge" id="usr_exercise_knowledge_yes" value="yes" checked aria-describedby="usr_exercise_knowledge_points_help">
+                                    Yes
+                                  </label>
+
+                                </div>
+                                <div class="form-check">
+                                <label class="form-check-label">
+                                    <input type="radio" class="form-check-input" name="usr_exercise_knowledge"  id="usr_exercise_knowledge_no" value="no" >
+                                    No
+                                  </label>
+
+                                </div>
+                               <small id="usr_exercise_knowledge_points_help" class="form-text text-muted">IF yes 10 points.</small>
+                           </fieldset>
+
+                           <div class="form-group">
+                                <label for="usr_first_gym">When was the first time you joined in gym </label>
+                               <input type="text" class="form-control" id="usr_first_gym">
+                           </div>
+
+                           <div class="form-group">
+                                <label for="usr_first_gym_how_many_times">How many times per week ? </label>
+                               <input type="text" class="form-control" id="usr_first_gym_how_many_times">
+                           </div>
+
+                           <div class="form-group">
+                                <label for="usr_first_gym_result">Result </label>
+                               <input type="text" class="form-control" id="usr_first_gym_result">
+                           </div>
+
+                           <div class="form-group">
+                              <label for="usr_first_gym_training">What kind of training you used to ?</label>
+                              <select id="usr_first_gym_training" class="form-control">
+                                <option value="">Select</option>
+
+                                  <option value="strngth_training">Strngth traning</option>
+                                <option value="endurance_training">Endurance training</option>
+                                  <option value="weight_loss">Split training</option>
+                                <option value="weight_gain">Circuit training</option>
+                                  <option value="body_toning">hypertrophy</option>
+                                <option value="body_building">Body building</option>
+                                  <option value="body_toning">sports</option>
+                                <option value="body_building">Martial arts</option>
+                                  <option value="body_toning">Yoga</option>
+                                <option value="body_building">Cardio</option>
+                                  <option value="others">Others</option>
+
+                              </select>
+                               <label for="usr_previous_other_training">Other trainings </label>
+                               <input type="text" class="form-control" id="usr_previous_other_training">
+
+                            </div>
+
+                           <fieldset class="form-group">
+                                <legend>Do you play any sports ?</legend>
+                                <div class="form-check">
+                                  <label class="form-check-label">
+                                    <input type="radio" class="form-check-input" name="usr_play_sports" id="usr_play_sports_yes" value="yes">
+                                    Yes
+                                  </label>
+                                </div>
+                                <div class="form-check">
+                                <label class="form-check-label">
+                                    <input type="radio" class="form-check-input" name="usr_play_sports"  id="usr_play_sports_no" value="no" checked>
+                                    No
+                                  </label>
+                                </div>
+                               <label for="usr_play_sports_name">Which kind of sport is compititive or fun </label>
+                               <input type="text" class="form-control" id="usr_play_sports_name">
+                           </fieldset>
+
+                           <div class="form-group">
+                                <label for="usr_gym_on_and_off">In Total how many year or months you been to gym on and off </label>
+                               <input type="text" class="form-control" id="usr_gym_on_and_off">
+                           </div>
+
+                           <div class="form-group">
+                                <label for="usr_last_time_to_gym">When was the last time you been to the gym? </label>
+                               <input type="text" class="form-control" id="usr_last_time_to_gym">
+                           </div>
+
+                           <fieldset class="form-group">
+                                <legend>Do you play any sports ?</legend>
+                                <div class="form-check">
+                                  <label class="form-check-label">
+                                    <input type="radio" class="form-check-input" name="usr_currently_training" id="usr_currently_training_yes" value="yes">
+                                    Yes
+                                  </label>
+                                </div>
+                                <div class="form-check">
+                                <label class="form-check-label">
+                                    <input type="radio" class="form-check-input" name="usr_currently_training"  id="usr_currently_training_no" value="no" checked>
+                                    No
+                                  </label>
+                                </div>
+                               <label for="usr_currently_training_started">When did you start? </label>
+                               <input type="text" class="form-control" id="usr_currently_training_started">
+
+                               <label for="usr_currently_training_duration">How many times per day? </label>
+                               <input type="text" class="form-control" id="usr_currently_training_duration">
+                           </fieldset>
+
+                           <div class="form-group">
+                              <label for="usr_current_training_type">What kind of training you do ?</label>
+                              <select id="usr_current_training_type" class="form-control">
+                                <option value="">Select</option>
+
+                                  <option value="strngth_training">Strngth traning</option>
+                                <option value="endurance_training">Endurance training</option>
+                                  <option value="weight_loss">Split training</option>
+                                <option value="weight_gain">Circuit training</option>
+                                  <option value="body_toning">hypertrophy</option>
+                                <option value="body_building">Body building</option>
+                                  <option value="body_toning">sports</option>
+                                <option value="body_building">Martial arts</option>
+                                  <option value="body_toning">Yoga</option>
+                                <option value="body_building">Cardio</option>
+                                  <option value="others">Others</option>
+
+                              </select>
+                               <label for="usr_current_other_training">Other trainings </label>
+                               <input type="text" class="form-control" id="usr_current_other_training">
+
+                            </div>
+
+                           <div class="form-group">
+                              <label for="usr_currnt_motivation_levl">What is your current motivation level ?</label>
+                              <select id="usr_currnt_motivation_levl" class="form-control">
+                                <option value="">Select</option>
+                                  <option value="1">1</option>
+                                  <option value="2">2</option>
+
+
+                              </select>
+                               <label for="usr_can_train_on_own">(Can you able to do by yourself when we give you a program? </label>
+                               <input type="text" class="form-control" id="usr_can_train_on_own">
+
+                            </div>
+
+                       </div>
+
+                       <!--      why what questions                 -->
+                       <div class="reg_personal_details" style="display:none;">
+                           <div class="form-group">
+                                <label for="usr_why_time_frame">Why you want to reach the above goal in that time frame? </label>
+                               <input type="text" class="form-control" id="usr_why_time_frame">
+                           </div>
+                           <div class="form-group">
+                                <label for="usr_goal_reach_obstacles">What can be the obstacles in order to achieve those (e.g., diet, work, family commitments, time, lazy, injuries, motivation) </label>
+                               <input type="text" class="form-control" id="usr_goal_reach_obstacles">
+                           </div>
+
+                       </div>
+
+                   </form>
+                   <div class="form-group pull-right">
+                        <button class="btn btn-primary">Save</button>
+                       <button class="btn btn-primary">Next >></button>
+                       </div>
+               </div>
+
+           </div>
+       </div>
+
+
+
+         <!--    main content ends   -->
+
+    <!--  Footer elements     -->
+            <footer id="footer">
+                <div class="row footer-widgets-warpper">
+                    <div class="col-md-6 col-lg-6 widget">
+                        <h3 class="widget-title">
+                        <span class="glyphicon glyphicon-home"></span>About Us</h3>
+                        <div class="widget-text">
+                            <p>
+                                Welcome to GetFit1st Personal Training.<br>
+                                A truly different workout experience! We believe we are not operating a business; instead we are building a family. A family dedicated to each other, our friends and clients.With this we have been amazingly successful. We approach each day with one mantra: “WE CARE.” Come in, try us out for free, and you will see we aren’t just kidding. From the time you arrive to the time you leave each and every day, you will be met with warm smiles and a caring heart. We care not just for your physical well-being but also what’s going on in your world. Remember your family is our family.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6 widget">
+
+                        <h3 class="widget-title">
+                        <span class="glyphicon glyphicon-home"></span>Search</h3>
+                        <div class="widget-text"></div>
+                    </div>
+                </div>
+                <div class="row social-media">
+                    <div class="col-md-9 col-lg-9 social-media-content">
+                        <i class="glyphicon glyphicon-earphone"></i> <span>+61 404 22 99 55</span>
+                    </div>
+                    <div class="col-md-3 col-lg-3 social-media-content">
+                        <div class="row">
+                            <div class="col-md-4 col-lg-4">
+                                <a class="facebook" target="_blank"  href="https://www.facebook.com/getfit1staustralia"><span class="fa fa-facebook social-icon"></span></a>
+                            </div>
+                             <div class="col-md-4 col-lg-4">
+                                 <a class="twitter" target="_blank"  href="https://www.facebook.com/getfit1staustralia"><span class="fa fa-twitter social-icon"></span></a>
+                            </div>
+                             <div class="col-md-4 col-lg-4">
+                                 <a class="youtube" target="_blank"  href="https://www.facebook.com/getfit1staustralia"><span class="fa fa-youtube social-icon"></span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+       </footer>
+           <!--   Footer ends    -->
+
+    <script src = "js/jquery-3.1.1.min.js"></script>
+    <script src = "js/bootstrap.min.js"></script>
+    <script src = "js/moment.js"></script>
+    <script src = "js/bootstrap-datetimepicker.min.js"></script>
+
+    <script type="text/javascript">
+    $(document).ready(function(){
+
+        // control boostrao drop down hover instead of click
+        $('.dropdown').hover(function(){
+          $(this).find('.dropdown-menu').first().stop(true, true).delay(250).slideDown();
+        }, function() {
+          $(this).find('.dropdown-menu').first().stop(true, true).delay(100).slideUp()
+        });
+
+        $('.date').datetimepicker({
+        format:'DD-MM-YYYY',
+
+          });
+    });
+    </script>
+ </body>
+
+
+</html>
