@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html>
+
+   <head>
+      <title>Getfit1st</title>
+      <meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
+      <link href = "css/bootstrap.min.css" rel = "stylesheet">
+      <link href = "css/custom.css" rel = "stylesheet">
+       <link href = "css/userProfile.css" rel = "stylesheet">
+
+       <link href = "css/bootstrap-datetimepicker.min.css" rel = "stylesheet">
+       <link href = "css/bootstrap2-toggle.min.css" rel = "stylesheet">
+
+       <link href = "css/font-awesome.min.css" rel = "stylesheet">
+
+   </head>
+
+
+    <style>
+        .src-image {
+  display: none;
+}
+
+.card {
+  overflow: hidden;
+  position: relative;
+  border: 1px solid #CCC;
+  border-radius: 8px;
+  text-align: center;
+  padding: 0;
+  background-color: #284c79;
+  color: rgb(136, 172, 217);
+}
+
+.card .header-bg {
+  /* This stretches the canvas across the entire hero unit */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  border-bottom: 1px #FFF solid;
+  /* This positions the canvas under the text */
+  z-index: 1;
+}
+.card .avatar {
+  position: relative;
+  margin-top: 15px;
+  z-index: 100;
+}
+
+.card .avatar img {
+  width: 100px;
+  height: 100px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  border: 5px solid rgba(0,0,30,0.8);
+}
+
+        .search-form .form-group {
+  float: left !important;
+  transition: all 0.35s, border-radius 0s;
+  width: 32px;
+  height: 32px;
+  background-color: transparent;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+  border-radius: 25px;
+  border: 1px solid #ccc;
+}
+.search-form .form-group input.form-control {
+  padding-right: 20px;
+  border: 0 none;
+  background: transparent;
+  box-shadow: none;
+  display:block;
+        border-radius: 20px;
+}
+.search-form .form-group input.form-control::-webkit-input-placeholder {
+  display: none;
+}
+.search-form .form-group input.form-control:-moz-placeholder {
+  /* Firefox 18- */
+  display: none;
+}
+.search-form .form-group input.form-control::-moz-placeholder {
+  /* Firefox 19+ */
+  display: none;
+}
+.search-form .form-group input.form-control:-ms-input-placeholder {
+  display: none;
+}
+.search-form .form-group:hover,
+.search-form .form-group.hover {
+  width: 50%;
+  border-radius: 4px 25px 25px 4px;
+}
+.search-form .form-group span.form-control-feedback {
+  position: absolute;
+  top: -1px;
+  right: -2px;
+  z-index: 2;
+  display: block;
+  width: 34px;
+  height: 34px;
+  line-height: 34px;
+  text-align: center;
+  color: #3596e0;
+  left: initial;
+  font-size: 14px;
+}
+.fa-plus-circle{
+font-size:30px;
+color: #3596e0;
+margin-left:5px;
+}
+        .profileHeader{
+                color: #555;
+        }
+
+    </style>
+   <body>
+
+       <div class="container-fluid">
+           <header >
+             <!-- top bar elements          -->
+           <div class="topbar">
+            <div class = "row mainRow" >
+                <div class="col-md-9 col-lg-9">
+                    <p>Any Questions? Call Us: <span>1-223-355-2214</span></p>
+                </div>
+                <div class="col-md-2 col-lg-2">
+                    <li class="dropdown loginDropDown">
+                      <a href="clientProfiles.html" class="dropdown-toggle" data-toggle="dropdown"><b>Login / Register</b> <span class="caret"></span></a>
+
+                        <ul id="login-dp" class="dropdown-menu">
+                            <li>
+                                 <div class="row">
+                                        <div class="col-md-12">
+                                             <form class="form" role="form" method="post" action="login" accept-charset="UTF-8" id="login-nav">
+                                                    <div class="form-group">
+                                                         <label class="sr-only" for="exampleInputEmail2">Email address</label>
+                                                         <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Email address" required>
+                                                    </div>
+                                                    <div class="form-group">
+                                                         <label class="sr-only" for="exampleInputPassword2">Password</label>
+                                                         <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password" required>
+                                                         <div class="help-block text-right"><a href="">Forget the password ?</a></div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                         <button type="submit" class="btn btn-primary btn-block">Sign in</button>
+                                                    </div>
+                                                    <div class="checkbox">
+                                                         <label>
+                                                         <input type="checkbox"> keep me logged-in
+                                                         </label>
+                                                    </div>
+                                             </form>
+                                        </div>
+                                        <div class="bottom text-center">
+                                            New here ? <a href="register.html"><b>Join Us</b></a>
+                                        </div>
+                                 </div>
+                            </li>
+                        </ul>
+
+                    </li>
+                </div>
+                <div class="col-md-1 col-lg-1">
+                    <a href="clientProfiles.html"><span class="fa fa-user userIcon"></span></a>
+                </div>
+           </div>
+         </div>
+           <!--  top bar end         -->
+           <!--    nav bar elements       -->
+
+           <nav class = "navbar navbar-default" role = "navigation">
+            <div class="row">
+                <div class="col-md-4 col-lg-4">
+                    <div class = "navbar-header">
+                        <button type = "button" class = "navbar-toggle"
+                             data-toggle = "collapse" data-target = "#example-navbar-collapse">
+                             <span class = "sr-only">Toggle navigation</span>
+                             <span class = "icon-bar"></span>
+                             <span class = "icon-bar"></span>
+                             <span class = "icon-bar"></span>
+                          </button>
+                            <a class = "" href = "home.html"><img src="images/logo.png"></img></a>
+                    </div>
+                   </div>
+
+               <div class="col-md-8 col-lg-8">
+                   <div class = "collapse navbar-collapse" id = "example-navbar-collapse">
+                   <ul class = "nav navbar-nav">
+                     <li class = "active"><a href = "home.html">HOME</a></li>
+                     <li class="dropdown">
+                         <a href = "#" class = "dropdown-toggle" data-toggle = "dropdown">PAGES
+                             <b class = "caret"></b>
+                         </a>
+                         <ul class = "dropdown-menu">
+                           <li><a href = "#">Home Variation</a></li>
+                           <li><a href = "#">About</a></li>
+                           <li><a href = "#">Our Classes</a></li>
+                           <li><a href = "#">FAQ</a></li>
+                           <li><a href = "#">Q&A</a></li>
+                           <li><a href = "#">Contact</a></li>
+                        </ul>
+                      </li>
+                       <li ><a href = "#">SCHEDULE</a></li>
+                       <li ><a href = "#">TRAINERS</a></li>
+                       <li ><a href = "#">BLOG</a></li>
+                       <li ><a href = "#">SHOP</a></li>
+                       <li ><a href = "#">FEATURES</a></li>
+                  </ul>
+                </div>
+                </div>
+               </div>
+            </nav>
+           </header>
+
+           <!--    nav bar end      -->
+            <!--   main content elements        -->
+
+       <div class="main-content container-fluid">
+           <div class="container profileHeader">
+               <h3><center>Clients</center></h3>
+               <div class="col-md-12 col-lg-12">
+                    <form action="" class="search-form">
+                        <div class="form-group has-feedback">
+                            <label for="search" class="sr-only">Search</label>
+                            <input type="text" class="form-control" name="search" id="search" placeholder="search">
+                            <span class="fa fa-search form-control-feedback"></span>
+                        </div>
+                    </form>
+                   <span class="fa fa-plus-circle" aria-hidden="true"></span>
+               </div>
+               <div class="col-md-6 col-lg-6">
+               </div>
+
+           </div>
+
+           <div class="users container">
+               <!--dynamic clients max is 4-->
+               <div class="col-md-3 col-lg-3 text-center doc-item">
+
+                    <div class="common-user animated fadeInUp clearfix ae-animation-fadeInUp">
+<!--                                            <input type="checkbox" checked data-toggle="toggle" data-onstyle="primary">-->
+					                        <ul class="list-inline social-lists animate">
+												<li><a href="#"><i class="fa fa-cutlery"></i></a></li>
+												<li><a href="#"><i class="fa fa-camera"></i></a></li>
+												<li><a href="#"><i class="fa fa-tasks"></i></a></li>
+												<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+											</ul>
+
+	                                        <figure>
+								                    <img width="100" height="100" src="./images/karteek.jpg" alt="doctor-2">
+								            </figure>
+
+						                    <div class="text-content">
+						                        <h5>Karteek Nidubrolu</h5>
+						                        <!-- <div class="for-border"></div> -->
+						                        <h5><small>karteek42@gmail.com</small></h5>
+						                    </div>
+						                </div>
+				 </div>
+               <div class="col-md-3 col-lg-3 text-center doc-item">
+                    <div class="common-user animated fadeInUp clearfix ae-animation-fadeInUp">
+
+					                        <ul class="list-inline social-lists animate">
+												<li><a href="#"><i class="fa fa-cutlery"></i></a></li>
+												<li><a href="#"><i class="fa fa-camera"></i></a></li>
+												<li><a href="#"><i class="fa fa-tasks"></i></a></li>
+												<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+											</ul>
+
+	                                        <figure>
+								                    <img width="100" height="100" src="./images/karteek.jpg" alt="doctor-2">
+								            </figure>
+
+						                    <div class="text-content">
+						                        <h5>Praveen Kumar</h5>
+						                        <!-- <div class="for-border"></div> -->
+						                        <h5><small>pravii@gmail.com</small></h5>
+						                    </div>
+						                </div>
+				 </div>
+               <div class="col-md-3 col-lg-3 text-center doc-item">
+                    <div class="common-user animated fadeInUp clearfix ae-animation-fadeInUp">
+
+					                        <ul class="list-inline social-lists animate">
+												<li><a href="#"><i class="fa fa-cutlery"></i></a></li>
+												<li><a href="#"><i class="fa fa-camera"></i></a></li>
+												<li><a href="#"><i class="fa fa-tasks"></i></a></li>
+												<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+											</ul>
+
+	                                        <figure>
+								                    <img width="100" height="100" src="./images/karteek.jpg" alt="doctor-2">
+								            </figure>
+
+						                    <div class="text-content">
+						                        <h5>Praveen Kumar</h5>
+						                        <!-- <div class="for-border"></div> -->
+						                        <h5><small>pravii@gmail.com</small></h5>
+						                    </div>
+						                </div>
+				 </div>
+               <div class="col-md-3 col-lg-3 text-center doc-item">
+
+                    <div class="common-user animated fadeInUp clearfix ae-animation-fadeInUp">
+
+					                        <ul class="list-inline social-lists animate">
+												<li><a href="#"><i class="fa fa-cutlery"></i></a></li>
+												<li><a href="#"><i class="fa fa-camera"></i></a></li>
+												<li><a href="#"><i class="fa fa-tasks"></i></a></li>
+												<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+											</ul>
+
+	                                        <figure>
+								                    <img width="100" height="100" src="./images/karteek.jpg" alt="doctor-2">
+								            </figure>
+
+						                    <div class="text-content">
+						                        <h5>Praveen Kumar</h5>
+						                        <!-- <div class="for-border"></div> -->
+						                        <h5><small>pravii@gmail.com</small></h5>
+						                    </div>
+						                </div>
+				 </div>
+               <div class="col-md-3 col-lg-3 text-center doc-item">
+                    <div class="common-user animated fadeInUp clearfix ae-animation-fadeInUp">
+
+					                        <ul class="list-inline social-lists animate">
+												<li><a href="#"><i class="fa fa-cutlery"></i></a></li>
+												<li><a href="#"><i class="fa fa-camera"></i></a></li>
+												<li><a href="#"><i class="fa fa-tasks"></i></a></li>
+												<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+											</ul>
+
+	                                        <figure>
+								                    <img width="100" height="100" src="./images/karteek.jpg" alt="doctor-2">
+								            </figure>
+
+						                    <div class="text-content">
+						                        <h5>Praveen Kumar</h5>
+						                        <!-- <div class="for-border"></div> -->
+						                        <h5><small>pravii@gmail.com</small></h5>
+						                    </div>
+						                </div>
+				 </div>
+
+
+            </div>
+
+
+
+
+
+       </div>
+
+
+
+         <!--    main content ends   -->
+
+
+       </div>
+    <!--  Footer elements     -->
+            <footer id="footer">
+                <div class="row footer-widgets-warpper">
+                    <div class="col-md-6 col-lg-6 widget">
+                        <h3 class="widget-title">
+                        <span class="glyphicon glyphicon-home"></span>About Us</h3>
+                        <div class="widget-text">
+                            <p>
+                                Welcome to GetFit1st Personal Training.<br>
+                                A truly different workout experience! We believe we are not operating a business; instead we are building a family. A family dedicated to each other, our friends and clients.With this we have been amazingly successful. We approach each day with one mantra: “WE CARE.” Come in, try us out for free, and you will see we aren’t just kidding. From the time you arrive to the time you leave each and every day, you will be met with warm smiles and a caring heart. We care not just for your physical well-being but also what’s going on in your world. Remember your family is our family.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6 widget">
+
+                        <h3 class="widget-title">
+                        <span class="glyphicon glyphicon-home"></span>Search</h3>
+                        <div class="widget-text"></div>
+                    </div>
+                </div>
+                <div class="row social-media">
+                    <div class="col-md-9 col-lg-9 social-media-content">
+                        <i class="glyphicon glyphicon-earphone"></i> <span>+61 404 22 99 55</span>
+                    </div>
+                    <div class="col-md-3 col-lg-3 social-media-content">
+                        <div class="row">
+                            <div class="col-md-4 col-lg-4">
+                                <a class="facebook" target="_blank"  href="https://www.facebook.com/getfit1staustralia"><span class="fa fa-facebook social-icon"></span></a>
+                            </div>
+                             <div class="col-md-4 col-lg-4">
+                                 <a class="twitter" target="_blank"  href="https://www.facebook.com/getfit1staustralia"><span class="fa fa-twitter social-icon"></span></a>
+                            </div>
+                             <div class="col-md-4 col-lg-4">
+                                 <a class="youtube" target="_blank"  href="https://www.facebook.com/getfit1staustralia"><span class="fa fa-youtube social-icon"></span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+       </footer>
+           <!--   Footer ends    -->
+
+    <script src = "js/jquery-3.1.1.min.js"></script>
+    <script src = "js/bootstrap.min.js"></script>
+    <script src = "js/moment.js"></script>
+    <script src = "js/bootstrap-datetimepicker.min.js"></script>
+    <script src = "js/bootstrap2-toggle.min.js"></script>
+
+    <script type="text/javascript">
+    $(document).ready(function(){
+
+        // control boostrao drop down hover instead of click
+        $('.dropdown').hover(function(){
+          $(this).find('.dropdown-menu').first().stop(true, true).delay(250).slideDown();
+        }, function() {
+          $(this).find('.dropdown-menu').first().stop(true, true).delay(100).slideUp()
+        });
+
+        $('.date').datetimepicker({
+        format:'DD-MM-YYYY',
+
+          });
+    });
+    </script>
+ </body>
+
+
+</html>
