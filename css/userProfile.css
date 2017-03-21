@@ -9,6 +9,7 @@
 
 .doc-item{
     margin-bottom: 10px;
+    cursor: pointer;
 }
 .users {
   text-align: center;
@@ -19,11 +20,27 @@
 .users h2 {
     font-weight: normal;
 }
-
+.toggle.btn {
+    min-width: 45px;
+    min-height: 22px;
+    border-radius: 10px;
+    float: left;
+        margin: 5px 0px 0px 5px;
+}
+.toggle-handle {
+    position: relative;
+    margin: 0 auto;
+    padding-top: 0;
+    padding-bottom: 0;
+    height: 100%;
+    width: -18px;
+    border-width: 0 1px;
+    border-radius: 8px;
+}
 .users .common-user {
  background-color: #fff;
     border: 1px solid #e2e2e2;
-    border-radius: 3px;
+    border-radius: 11px;
 }
 .users .common-user figure {
   overflow: hidden;

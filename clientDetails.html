@@ -6,10 +6,11 @@
       <meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
       <link href = "css/bootstrap.min.css" rel = "stylesheet">
       <link href = "css/custom.css" rel = "stylesheet">
-       <link href = "css/userProfile.css" rel = "stylesheet">
+
 
        <link href = "css/bootstrap-datetimepicker.min.css" rel = "stylesheet">
        <link href = "css/bootstrap2-toggle.min.css" rel = "stylesheet">
+          <link href = "css/userProfile.css" rel = "stylesheet">
 
        <link href = "css/font-awesome.min.css" rel = "stylesheet">
 
@@ -21,42 +22,7 @@
   display: none;
 }
 
-.card {
-  overflow: hidden;
-  position: relative;
-  border: 1px solid #CCC;
-  border-radius: 8px;
-  text-align: center;
-  padding: 0;
-  background-color: #284c79;
-  color: rgb(136, 172, 217);
-}
 
-.card .header-bg {
-  /* This stretches the canvas across the entire hero unit */
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 70px;
-  border-bottom: 1px #FFF solid;
-  /* This positions the canvas under the text */
-  z-index: 1;
-}
-.card .avatar {
-  position: relative;
-  margin-top: 15px;
-  z-index: 100;
-}
-
-.card .avatar img {
-  width: 100px;
-  height: 100px;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  border-radius: 50%;
-  border: 5px solid rgba(0,0,30,0.8);
-}
 
         .search-form .form-group {
   float: left !important;
@@ -167,7 +133,7 @@ margin-left:5px;
                     </li>
                 </div>
                 <div class="col-md-1 col-lg-1">
-                    <a href="clientProfiles.html"><span class="fa fa-user userIcon"></span></a>
+                    <a href="clientDetails.html"><span class="fa fa-user userIcon"></span></a>
                 </div>
            </div>
          </div>
@@ -221,14 +187,14 @@ margin-left:5px;
            <!--    nav bar end      -->
             <!--   main content elements        -->
 
-       <div class="main-content container-fluid">
+       <div class="main-content container">
            <div class="container profileHeader">
                <h3><center>Clients</center></h3>
                <div class="col-md-12 col-lg-12">
                     <form action="" class="search-form">
                         <div class="form-group has-feedback">
                             <label for="search" class="sr-only">Search</label>
-                            <input type="text" class="form-control" name="search" id="search" placeholder="search">
+                            <input type="text" class="form-control" name="search" id="search" placeholder="Search for a client">
                             <span class="fa fa-search form-control-feedback"></span>
                         </div>
                     </form>
@@ -244,7 +210,7 @@ margin-left:5px;
                <div class="col-md-3 col-lg-3 text-center doc-item">
 
                     <div class="common-user animated fadeInUp clearfix ae-animation-fadeInUp">
-<!--                                            <input type="checkbox" checked data-toggle="toggle" data-onstyle="primary">-->
+                                            <input type="checkbox" checked data-toggle="toggle" data-onstyle="primary">
 					                        <ul class="list-inline social-lists animate">
 												<li><a href="#"><i class="fa fa-cutlery"></i></a></li>
 												<li><a href="#"><i class="fa fa-camera"></i></a></li>
@@ -265,7 +231,7 @@ margin-left:5px;
 				 </div>
                <div class="col-md-3 col-lg-3 text-center doc-item">
                     <div class="common-user animated fadeInUp clearfix ae-animation-fadeInUp">
-
+                                            <input type="checkbox" checked data-toggle="toggle" data-onstyle="primary">
 					                        <ul class="list-inline social-lists animate">
 												<li><a href="#"><i class="fa fa-cutlery"></i></a></li>
 												<li><a href="#"><i class="fa fa-camera"></i></a></li>
@@ -286,7 +252,7 @@ margin-left:5px;
 				 </div>
                <div class="col-md-3 col-lg-3 text-center doc-item">
                     <div class="common-user animated fadeInUp clearfix ae-animation-fadeInUp">
-
+                                             <input type="checkbox" checked data-toggle="toggle" data-onstyle="primary">
 					                        <ul class="list-inline social-lists animate">
 												<li><a href="#"><i class="fa fa-cutlery"></i></a></li>
 												<li><a href="#"><i class="fa fa-camera"></i></a></li>
@@ -308,7 +274,7 @@ margin-left:5px;
                <div class="col-md-3 col-lg-3 text-center doc-item">
 
                     <div class="common-user animated fadeInUp clearfix ae-animation-fadeInUp">
-
+                                             <input type="checkbox" checked data-toggle="toggle" data-onstyle="primary">
 					                        <ul class="list-inline social-lists animate">
 												<li><a href="#"><i class="fa fa-cutlery"></i></a></li>
 												<li><a href="#"><i class="fa fa-camera"></i></a></li>
@@ -329,7 +295,7 @@ margin-left:5px;
 				 </div>
                <div class="col-md-3 col-lg-3 text-center doc-item">
                     <div class="common-user animated fadeInUp clearfix ae-animation-fadeInUp">
-
+                                             <input type="checkbox" checked data-toggle="toggle" data-onstyle="primary">
 					                        <ul class="list-inline social-lists animate">
 												<li><a href="#"><i class="fa fa-cutlery"></i></a></li>
 												<li><a href="#"><i class="fa fa-camera"></i></a></li>
@@ -422,12 +388,16 @@ margin-left:5px;
         }, function() {
           $(this).find('.dropdown-menu').first().stop(true, true).delay(100).slideUp()
         });
+//        $('.doc-item').click(function(){
+//            window.location = 'clientProfileDetails.html';
+//        })
 
         $('.date').datetimepicker({
         format:'DD-MM-YYYY',
 
           });
     });
+
     </script>
  </body>
 

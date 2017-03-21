@@ -6,22 +6,72 @@
       <meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
       <link href = "css/bootstrap.min.css" rel = "stylesheet">
       <link href = "css/custom.css" rel = "stylesheet">
+
+
+       <link href = "css/bootstrap-datetimepicker.min.css" rel = "stylesheet">
+       <link href = "css/bootstrap2-toggle.min.css" rel = "stylesheet">
+          <link href = "css/userProfile.css" rel = "stylesheet">
+
        <link href = "css/font-awesome.min.css" rel = "stylesheet">
-
-
-
 
    </head>
 
-    <style>
 
+    <style>
+        .profileMenu{
+
+    padding: 0px;
+    padding-bottom: 8px;
+    -webkit-box-shadow: 0px 8px 14px -6px rgba(0,0,0,0.75);
+        }
+                .src-image {
+  display: none;
+}
+        .main-content .row{
+           margin:0px ! important;
+        }
+        .tab-content{
+                margin-top: 30px;
+        }
+        .users .common-user .text-content {
+            padding: 19px 0px 13px;
+            background-color: lightgray;
+
+        }
+        .pannelHeading a{
+                text-align: right;
+        }
+        .pannelHeading .col-md-12,  .pannelHeading .col-lg-12{
+            padding: 7px 0px 4px 0px ! important;
+            border: 2px solid #e2e2e2;
+
+        }
+        .pannelBody .col-md-12,  .pannelBody .col-lg-12{
+            border: 2px solid #e2e2e2;
+            border-top: 0px;
+            min-height: 240px;
+            /* -webkit-box-shadow: 0px 8px 14px -5px rgba(0,0,0,0.75); */
+
+        }
+        .pannelBody span{
+                border-radius: 71px;
+                font-size: 50px;
+                background: #18c2e3;
+                padding: 50px 50px 50px 50px;
+        }
+        .pannelBodyContent{
+                margin: 23px 0px 23px 0px;
+                border: 2px solid #e2e2e2 ! important;
+                padding-top: 10px;
+             -webkit-box-shadow: 0px 4px 20px 2px rgba(206, 175, 175, 0.75);
+
+        }
     </style>
    <body>
 
        <div class="container-fluid">
-
-           <header>
-           <!-- top bar elements          -->
+           <header >
+             <!-- top bar elements          -->
            <div class="topbar">
             <div class = "row mainRow" >
                 <div class="col-md-9 col-lg-9">
@@ -29,7 +79,7 @@
                 </div>
                 <div class="col-md-2 col-lg-2">
                     <li class="dropdown loginDropDown">
-                      <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>Login / Register</b> <span class="caret"></span></a>
+                      <a href="clientProfiles.html" class="dropdown-toggle" data-toggle="dropdown"><b>Login / Register</b> <span class="caret"></span></a>
 
                         <ul id="login-dp" class="dropdown-menu">
                             <li>
@@ -70,7 +120,7 @@
            </div>
          </div>
            <!--  top bar end         -->
-            <!--    nav bar elements       -->
+           <!--    nav bar elements       -->
 
            <nav class = "navbar navbar-default" role = "navigation">
             <div class="row">
@@ -117,48 +167,113 @@
            </header>
 
            <!--    nav bar end      -->
-           </header>
-       <div class="main-content">
-           <!--   carousel elements     -->
-                <div id="myCarousel" class="carousel slide" data-ride="carousel">
-                  <!-- Indicators -->
-                  <ol class="carousel-indicators">
-                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                    <li data-target="#myCarousel" data-slide-to="1"></li>
+            <!--   main content elements        -->
 
-                  </ol>
+       <div class="main-content container">
+           <div class="row">
+               <h3>Karteek Nidubrolu</h3>
+               <div class="col-md-12 col-lg-12 profileMenu">
+                   <ul class="nav nav-pills">
+                    <li class="active"><a data-toggle="tab" href="#profile">PROFILE</a></li>
+                    <li><a data-toggle="tab" href="#workouts">WORKOUTS</a></li>
+                    <li><a data-toggle="tab" href="#menu2">NUTRITION PLANS</a></li>
+                    <li><a data-toggle="tab" href="#menu3">SESSIONS & PACKAGES</a></li>
+                    <li><a data-toggle="tab" href="#menu3">RESULTS TRACKER</a></li>
+                    <li><a data-toggle="tab" href="#menu3">FORMS</a></li>
+                  </ul>
+               </div>
+            </div>
+           <div class="tab-content">
+               <!--first tab-->
+              <div id="profile" class="tab-pane fade in active">
+                  <div class="row">
+                   <div class="col-md-3 col-lg-3 text-center doc-item users">
+                       <div class="common-user animated  clearfix ">
+                            <figure>
+                              <img width="100" height="100" src="./images/karteek.jpg" alt="doctor-2">
+                            </figure>
+                            <div class="text-content">
 
-                  <!-- Wrapper for slides -->
-                  <div class="carousel-inner" role="listbox">
-                    <div class="item active">
-                      <img src="images/homepage_03.png" alt="Sample">
-                      <div class="carousel-caption">
-                        <h3>Sample</h3>
-                        <h3>This is the caption for slide 1</h3>
-                      </div>
-                    </div>
-                    <div class="item">
-                      <img src="images/BANNER_03.png" alt="Sample">
-                      <div class="carousel-caption">
-                        <h3>Sample</h3>
-                          <h3>This is the caption for slide 2</h3>
-                      </div>
-                    </div>
-                    </div>
+                              <h5 class="col-md-10 col-lg-10">karteek42@gmail.com</h5><span class="col-md-2 col-lg-2 fa fa-pencil" aria-hidden="true"></span>
+                              <h5><small>0406007657</small></h5>
+                            </div>
+                        </div>
 
-                  <!-- Left and right controls -->
-                  <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
-                  </a>
-                  <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
-                  </a>
+                  </div>
+                    <div class="col-md-9 col-lg-9 recentActivity">
+                        <h4>Recent Activity comes here...</h4>
+                    </div>
                 </div>
-           <!--   carousel ends        -->
+
+
+                  <div class="row fitnessInterests">
+                  <div class="col-md-3 col-lg-3">
+                      <div class="pannel">
+                      <div class="pannelHeading">
+                          <div class="col-md-12 col-lg-12">
+                          <label class="col-md-8 col-lg-8">Fitness interests</label>
+                          <a href="#" class="col-md-4 col-lg-4"><span class="fa fa-plus"></span></a>
+                          </div>
+
+                      </div>
+                     <div class="pannelBody">
+                         <div class="col-md-12 col-lg-12">
+                              <div class="col-md-12 col-lg-12 pannelBodyContent">
+                                  <span class="fa fa-pencil" aria-hidden="true"></span>
+                                 <h4>No fitness interests set</h4>
+                                 <p>This client currently doesn't have any fitness interests set.</p>
+                             </div>
+                         </div>
+                     </div>
+
+                      </div>
+
+                  </div>
+                  </div>
+                  <div class="row progressPhotos">
+                  <div class="col-md-3 col-lg-3">
+                    </div>
+                  </div>
+
+
+               </div>
+
+               <!--second tab-->
+               <div id="workouts" class="tab-pane fade">
+               </div>
+
            </div>
-           <!--  Footer elements     -->
+        </div>
+
+<!--
+          <div class="tab-content">
+            <div id="home" class="tab-pane fade in active">
+              <h3>HOME</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+            <div id="menu1" class="tab-pane fade">
+              <h3>Menu 1</h3>
+              <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
+            <div id="menu2" class="tab-pane fade">
+              <h3>Menu 2</h3>
+              <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+            </div>
+            <div id="menu3" class="tab-pane fade">
+              <h3>Menu 3</h3>
+              <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+            </div>
+          </div>
+-->
+       </div>
+
+
+
+         <!--    main content ends   -->
+
+
+       </div>
+    <!--  Footer elements     -->
             <footer id="footer">
                 <div class="row footer-widgets-warpper">
                     <div class="col-md-6 col-lg-6 widget">
@@ -201,19 +316,29 @@
        </footer>
            <!--   Footer ends    -->
 
-       </div>
-        <script src = "js/jquery-3.1.1.min.js"></script>
-        <script src = "js/bootstrap.min.js"></script>
-   </body>
-        <script>
-            $(document).ready(function(){
+    <script src = "js/jquery-3.1.1.min.js"></script>
+    <script src = "js/bootstrap.min.js"></script>
+    <script src = "js/moment.js"></script>
+    <script src = "js/bootstrap-datetimepicker.min.js"></script>
+    <script src = "js/bootstrap2-toggle.min.js"></script>
 
-                // control boostrao drop down hover instead of click
-                $('.dropdown').hover(function(){
-                  $(this).find('.dropdown-menu').first().stop(true, true).delay(250).slideDown();
-                }, function() {
-                  $(this).find('.dropdown-menu').first().stop(true, true).delay(100).slideUp()
-                });
-            });
-            </script>
+    <script type="text/javascript">
+    $(document).ready(function(){
+
+        // control boostrao drop down hover instead of click
+        $('.dropdown').hover(function(){
+          $(this).find('.dropdown-menu').first().stop(true, true).delay(250).slideDown();
+        }, function() {
+          $(this).find('.dropdown-menu').first().stop(true, true).delay(100).slideUp()
+        });
+
+        $('.date').datetimepicker({
+        format:'DD-MM-YYYY',
+
+          });
+    });
+    </script>
+ </body>
+
+
 </html>

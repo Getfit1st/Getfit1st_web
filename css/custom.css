@@ -1,6 +1,7 @@
 .container-fluid{
 
     padding:0px ! important;
+    height:100%;
 }
 .topbar
         {
@@ -132,4 +133,7 @@
         min-height: 400px;
     position: relative;
     background: url(../images/maincontent.jpg) repeat;
+}
+.mainContentCol{
+    padding: 0px;
 }
