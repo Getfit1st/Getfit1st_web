@@ -25,7 +25,7 @@
     min-height: 22px;
     border-radius: 10px;
     float: left;
-        margin: 5px 0px 0px 5px;
+        margin: 5px 0px 5px 5px;
 }
 .toggle-handle {
     position: relative;
