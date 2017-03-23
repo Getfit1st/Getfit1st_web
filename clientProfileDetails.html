@@ -43,29 +43,83 @@
         }
         .pannelHeading .col-md-12,  .pannelHeading .col-lg-12{
             padding: 7px 0px 4px 0px ! important;
-            border: 2px solid #e2e2e2;
+            border: 1px solid #ebebeb;
+            border: 1px solid #d0cbcb;
+                background-color: white;
+                background-color: #e7e7e7;
 
         }
         .pannelBody .col-md-12,  .pannelBody .col-lg-12{
-            border: 2px solid #e2e2e2;
+            border:1px solid #ebebeb;
+            border: 1px solid #d0cbcb;
             border-top: 0px;
             min-height: 240px;
+                background-color: white;
+            background-color: #f9f5f5;
             /* -webkit-box-shadow: 0px 8px 14px -5px rgba(0,0,0,0.75); */
 
         }
         .pannelBody span{
-                border-radius: 71px;
-                font-size: 50px;
-                background: #18c2e3;
-                padding: 50px 50px 50px 50px;
+                    border-radius: 71px;
+                    font-size: 30px;
+                    background: #18c2e3;
+                    padding: 30px 30px 30px 30px;
         }
         .pannelBodyContent{
-                margin: 23px 0px 23px 0px;
-                border: 2px solid #e2e2e2 ! important;
-                padding-top: 10px;
-             -webkit-box-shadow: 0px 4px 20px 2px rgba(206, 175, 175, 0.75);
+                   margin: 33px 0px 33px 33px;
+    border: 1px solid #ebebeb ! important;
+            border: 1px solid #d0cbcb ! important;
+    padding-top: 10px;
+    -webkit-box-shadow: 0px 4px 20px 2px rgba(206, 175, 175, 0.75);
+    min-height: 240px;
+    text-align: center;
+            background-color: #e7e7e7;
 
         }
+        .common-user .text-content span{
+                border-radius: 0px ! important;
+         font-size: 14px ! important;
+         background: transparent ! important;
+         padding: 0px ! important;
+        }
+
+        .users .common-user {
+            background-color: #fff;
+            border: 1px solid #e2e2e2;
+            border-radius: 0px;
+            }
+        .users .common-user h5 {
+
+            font-size: 15px ! important;
+
+            }
+         .pannelBody .userBody{
+         border-top:2px solid #e2e2e2 ;
+        }
+        #profile .row{
+                margin-bottom: 20px ! important;
+        }
+        .userBody i{
+                float: right;
+    padding: 7px 0px 0px 0px;
+    font-size: 17px;
+    color: #337ab7;
+            cursor:pointer;
+        }
+        .userContextMenu{
+            left:100% ! important;
+            top:0% ! important;
+            display:block ! important;
+
+        }
+        .userContextMenu li a{
+           color: #337ab7;
+        }
+        .userContextMenu li a i{
+               float: none ! important;
+    padding: 0px 10px 0px 0px ! important;
+        }
+
     </style>
    <body>
 
@@ -74,7 +128,7 @@
              <!-- top bar elements          -->
            <div class="topbar">
             <div class = "row mainRow" >
-                <div class="col-md-9 col-lg-9">
+                <div class="col-md-8 col-lg-8">
                     <p>Any Questions? Call Us: <span>1-223-355-2214</span></p>
                 </div>
                 <div class="col-md-2 col-lg-2">
@@ -114,8 +168,24 @@
 
                     </li>
                 </div>
-                <div class="col-md-1 col-lg-1">
-                    <a href="clientDetails.html"><span class="fa fa-user userIcon"></span></a>
+                <div class="col-md-2 col-lg-2">
+
+                    <li class="dropdown">
+                        <a href="#"><span class="fa fa-user userIcon"></span></a>
+                             <b class = "caret"></b>
+                         </a>
+                         <ul class = "dropdown-menu userMenu">
+                           <li><a href = "#"><i class="fa fa-home"></i>My Hub</a></li>
+                           <li><a href = "clientDetails.html"><i class="fa fa-users"></i>Clients</a></li>
+                           <li><a href = "#"><i class="fa fa-newspaper-o"></i>Workouts</a></li>
+                           <li><a href = "#"><i class="fa fa-cutlery"></i>Nutrition</a></li>
+                           <li><a href = "#"><i class="fa fa-newspaper-o"></i>Packages</a></li>
+                           <li><a href = "#"><i class="fa fa-newspaper-o"></i>Forms</a></li>
+                             <li><a href = "#"><i class="fa fa-user-plus"></i>Trainers</a></li>
+                             <li><a href = "#"><i class="fa fa-calendar"></i>Calendar</a></li>
+                             <li><a href = "#"><i class="fa fa-comments-o"></i>Messages</a></li>
+                        </ul>
+                      </li>
                 </div>
            </div>
          </div>
@@ -187,27 +257,55 @@
                <!--first tab-->
               <div id="profile" class="tab-pane fade in active">
                   <div class="row">
-                   <div class="col-md-3 col-lg-3 text-center doc-item users">
-                       <div class="common-user animated  clearfix ">
-                            <figure>
-                              <img width="100" height="100" src="./images/karteek.jpg" alt="doctor-2">
-                            </figure>
-                            <div class="text-content">
 
-                              <h5 class="col-md-10 col-lg-10">karteek42@gmail.com</h5><span class="col-md-2 col-lg-2 fa fa-pencil" aria-hidden="true"></span>
-                              <h5><small>0406007657</small></h5>
-                            </div>
-                        </div>
+
+                <div class="userPannel">
+                  <div class="col-md-4 col-lg-4">
+
+                      <div class="pannel">
+
+                     <div class="pannelBody">
+                         <div class="col-md-12 col-lg-12 userBody">
+                             <i class="fa fa-bars" aria-hidden="true"></i>
+                             <ul id="example2-context-menu" class="dropdown-menu userContextMenu">
+                                <li data-item=""><a><i class="fa fa-newspaper-o"></i>View PARQ</a></li>
+                                <li data-item=""><a><i class="fa fa-file"></i>View Notes</a></li>
+                                <li data-item=""><a><i class="fa fa-file-text"></i>Edit Goal</a></li>
+                                <li data-item=""><a><i class="fa fa-pencil"></i>Edit Client Profile</a></li>
+                                 <li data-item=""><a><i class="fa fa-user"></i>Move Client To Another Trainer</a></li>
+                                 <li data-item=""><a><i class="fa fa-trash"></i>Delete Client</a></li>
+                            </ul>
+
+                              <div class="col-md-10 col-lg-10 text-center doc-item users pannelBodyContent">
+                               <div class="common-user animated  clearfix ">
+                                    <figure>
+                                      <img width="100" height="100" src="./images/karteek.jpg" alt="doctor-2">
+                                    </figure>
+                                    <div class="text-content">
+
+                                      <h5 class="col-md-10 col-lg-10">karteek42@gmail.com</h5><span class="col-md-2 col-lg-2 fa fa-pencil" aria-hidden="true"></span>
+                                      <h4><small>0406007657</small></h4>
+                                    </div>
+                                </div>
+
+                                </div>
+                         </div>
+                     </div>
+
+                    </div>
 
                   </div>
-                    <div class="col-md-9 col-lg-9 recentActivity">
+                  </div>
+
+
+                    <div class="col-md-8 col-lg-8 recentActivity">
                         <h4>Recent Activity comes here...</h4>
                     </div>
                 </div>
 
 
                   <div class="row fitnessInterests">
-                  <div class="col-md-3 col-lg-3">
+                  <div class="col-md-4 col-lg-4">
                       <div class="pannel">
                       <div class="pannelHeading">
                           <div class="col-md-12 col-lg-12">
@@ -218,7 +316,7 @@
                       </div>
                      <div class="pannelBody">
                          <div class="col-md-12 col-lg-12">
-                              <div class="col-md-12 col-lg-12 pannelBodyContent">
+                              <div class="col-md-10 col-lg-10 pannelBodyContent">
                                   <span class="fa fa-pencil" aria-hidden="true"></span>
                                  <h4>No fitness interests set</h4>
                                  <p>This client currently doesn't have any fitness interests set.</p>
@@ -231,8 +329,28 @@
                   </div>
                   </div>
                   <div class="row progressPhotos">
-                  <div class="col-md-3 col-lg-3">
-                    </div>
+                 <div class="col-md-4 col-lg-4">
+                      <div class="pannel">
+                      <div class="pannelHeading">
+                          <div class="col-md-12 col-lg-12">
+                          <label class="col-md-8 col-lg-8">Progress photos</label>
+                          <a href="#" class="col-md-4 col-lg-4"><span class="fa fa-plus"></span></a>
+                          </div>
+
+                      </div>
+                     <div class="pannelBody">
+                         <div class="col-md-12 col-lg-12">
+                              <div class="col-md-10 col-lg-10 pannelBodyContent">
+                                  <span class="fa fa-pencil" aria-hidden="true"></span>
+                                 <h4>No progress photos!</h4>
+                                 <p>This client currently doesn't have any progress photos.</p>
+                             </div>
+                         </div>
+                     </div>
+
+                      </div>
+
+                  </div>
                   </div>
 
 
@@ -245,26 +363,7 @@
            </div>
         </div>
 
-<!--
-          <div class="tab-content">
-            <div id="home" class="tab-pane fade in active">
-              <h3>HOME</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-            </div>
-            <div id="menu1" class="tab-pane fade">
-              <h3>Menu 1</h3>
-              <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-            </div>
-            <div id="menu2" class="tab-pane fade">
-              <h3>Menu 2</h3>
-              <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
-            </div>
-            <div id="menu3" class="tab-pane fade">
-              <h3>Menu 3</h3>
-              <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
-            </div>
-          </div>
--->
+
        </div>
 
 

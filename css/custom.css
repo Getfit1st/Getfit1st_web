@@ -103,6 +103,15 @@
     font-size: 12px;
     line-height: 24px;
 }
+.caret{
+    color:white;
+}
+.userMenu li a i{
+    padding: 0px 10px 0px 0px;
+}
+.userMenu li a{
+    color: #777 ! important;
+}
 .social-media{
     padding: 10px 60px 0px 60px;
 }
